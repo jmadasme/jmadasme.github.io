@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IoT &amp; Hardware · jmadasme</title>
+<meta name="description" content="Sistemas completos: LoRaWAN, Node-RED, CashDro y autoatención, con sus versiones reunidas.">
+<meta property="og:title" content="IoT &amp; Hardware · jmadasme">
+<meta property="og:description" content="Sistemas completos: LoRaWAN, Node-RED, CashDro y autoatención, con sus versiones reunidas.">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06141b;--bg2:#081b23;--panel:#0b222b;
+  --line:rgba(148, 190, 200, .16);--text:#e6f0f3;--muted:#9db4bd;
+  --accent:#2A9D8F;--accent2:#457B9D;--accent3:#5B7C99;
+  --warm:#D6A86A;
+  --font:'Space Grotesk','Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-width:none}
+::-webkit-scrollbar{width:0;height:0}
+body{margin:0;background:
+  radial-gradient(900px 500px at 85% -10%,rgba(42,157,143,.12),transparent 60%),
+  radial-gradient(700px 400px at 5% 20%,rgba(69,123,157,.10),transparent 60%),
+  var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(148,190,200,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(148,190,200,.035) 1px,transparent 1px);
+  background-size:72px 72px;mask-image:linear-gradient(to bottom,#000 0%,transparent 70%)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 40px));margin:0 auto;position:relative;z-index:1}
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);background:rgba(6,20,27,.78);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+.brand-mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04141a}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:13.5px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:11px 18px;font-weight:650;font-size:13.5px;border:1px solid var(--line);transition:.18s}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04141a;border-color:transparent;box-shadow:0 12px 30px -16px rgba(42,157,143,.7)}
+.btn-primary:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn-ghost:hover{border-color:rgba(148,190,200,.4);background:rgba(148,190,200,.06)}
+.hero{padding:clamp(64px,9vw,116px) 0 48px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--accent);opacity:.8}
+h1{font-size:clamp(42px,6.2vw,76px);line-height:.98;letter-spacing:-.055em;margin:0 0 22px;font-weight:700}
+.grad{background:linear-gradient(100deg,var(--accent),var(--accent2) 55%,var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,2vw,20px);color:#c3d4da;max-width:58ch;margin:0 0 26px;line-height:1.55}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(11,34,43,.55)}
+.visual-frame{border:1px solid var(--line);border-radius:20px;padding:12px;background:linear-gradient(180deg,rgba(11,34,43,.9),rgba(6,20,27,.8));box-shadow:0 30px 80px -50px rgba(0,0,0,.9)}
+.visual-frame img{width:100%;display:block;border-radius:12px}
+.visual-caption{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin:10px 4px 0;letter-spacing:.03em}
+.float-chip{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0 12px;font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:rgba(6,20,27,.8)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(42,157,143,.12)}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(8,27,35,.45)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding:26px 22px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat-num{font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.stat-label{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:8px}
+.section{padding:clamp(52px,7vw,86px) 0;border-bottom:1px solid var(--line)}
+.section.tight{padding:clamp(42px,5vw,66px) 0}
+.section-head{max-width:760px;margin-bottom:30px}
+.kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:0 0 12px}
+.section-sub{color:var(--muted);font-size:16px;margin:0;max-width:70ch}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:1px solid var(--line);border-radius:16px;padding:22px;background:linear-gradient(180deg,rgba(11,34,43,.72),rgba(6,20,27,.6))}
+.card h3{margin:0 0 8px;font-size:17px;letter-spacing:-.02em}
+.card p{margin:0;color:var(--muted);font-size:14.5px}
+.card .tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{border:1px solid var(--line);border-radius:14px;padding:18px;background:rgba(8,27,35,.55)}
+.step-n{font-family:var(--mono);font-size:10.5px;color:var(--accent);margin-bottom:10px}
+.step h4{margin:0 0 6px;font-size:14.5px}
+.step p{margin:0;color:var(--muted);font-size:13px}
+.versions{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.version{border:1px solid var(--line);border-radius:16px;padding:20px;background:linear-gradient(180deg,rgba(11,34,43,.7),rgba(6,20,27,.55));position:relative;overflow:hidden}
+.version::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent2));opacity:.8}
+.version-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.version h3{margin:0;font-size:18px;letter-spacing:-.02em}
+.version .count{font-family:var(--mono);font-size:10px;color:var(--muted);border:1px solid var(--line);padding:4px 8px;border-radius:999px}
+.version p{margin:0 0 14px;color:var(--muted);font-size:13.5px}
+.version a{font-family:var(--mono);font-size:11px;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.version a:hover{color:var(--text)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.feature{border:1px solid var(--line);border-radius:14px;padding:18px;background:rgba(8,27,35,.45)}
+.feature h4{margin:0 0 6px;font-size:14.5px}
+.feature p{margin:0;color:var(--muted);font-size:13px}
+.stack-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{font-family:var(--mono);font-size:10.5px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(11,34,43,.55)}
+.note{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:13px;color:var(--muted);font-size:12.5px;background:rgba(11,34,43,.35)}
+.note svg{flex:0 0 auto;color:var(--accent);margin-top:1px}
+.terminal{border:1px solid var(--line);border-radius:14px;background:#041016;overflow:hidden}
+.terminal-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);background:rgba(11,34,43,.7)}
+.dot{width:8px;height:8px;border-radius:50%;background:#36515c}
+.dot:first-child{background:#9b5b5b}.dot:nth-child(2){background:#9b8a5b}.dot:nth-child(3){background:#4f8f78}
+.terminal pre{margin:0;padding:16px;overflow:auto;font-family:var(--mono);font-size:12px;line-height:1.75;color:#c9dde2}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.doc{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);border-radius:14px;padding:17px;background:rgba(8,27,35,.45);transition:.18s}
+.doc:hover{border-color:rgba(42,157,143,.45);transform:translateY(-2px)}
+.doc .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.doc h4{margin:0;font-size:14.5px}
+.doc p{margin:0;color:var(--muted);font-size:12.5px}
+.cta{padding:clamp(54px,7vw,88px) 0;text-align:center}
+.cta-box{border:1px solid var(--line);border-radius:22px;padding:clamp(30px,5vw,56px);background:
+  radial-gradient(600px 260px at 50% 0%,rgba(42,157,143,.16),transparent 70%),
+  linear-gradient(180deg,rgba(11,34,43,.8),rgba(6,20,27,.65))}
+.cta h2{max-width:22ch;margin:0 auto 14px}
+.cta p{color:var(--muted);max-width:64ch;margin:0 auto 24px}
+.footer{border-top:1px solid var(--line);padding:34px 0 46px;color:var(--muted);font-size:12.5px}
+.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer a{color:var(--muted)}.footer a:hover{color:var(--text)}
+.reveal{opacity:1;transform:none}
+@media(max-width:900px){
+  .hero-grid,.stack-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .timeline,.features,.docs{grid-template-columns:1fr 1fr}
+  .versions{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .nav-links a:not(.btn){display:none}
+  .two,.timeline,.features,.docs{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-right:0;border-bottom:1px solid var(--line)}
+  h1{font-size:42px}
+}
+</style>
+
+</head>
+<body>
+<header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span><span>jmadasme<span style="color:var(--accent)">.</span>portfolio</span></a>
+  <nav class="nav-links"><a href="/arduino-unoq/">Arduino</a><a href="/iot/" style='color:var(--text)'>IoT</a><a href="/software/">Software</a><a class="btn btn-ghost" style="padding:9px 15px" href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></nav>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap" style="max-width:900px">
+  <div class="eyebrow">02 · Del sensor al sistema</div>
+  <h1>IoT &amp; Hardware.<br><span class="grad">4 proyectos.</span></h1>
+  <p class="lead">Sistemas completos: LoRaWAN, Node-RED, CashDro y autoatención, con sus versiones reunidas.</p>
+  <div class="badges"><span class="badge">4 proyectos</span><span class="badge">6 versiones</span><span class="badge">Documentación completa</span></div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="section-head reveal"><div class="kicker">Catálogo · IoT &amp; Hardware</div><h2>Elegí un proyecto.</h2><p class="section-sub">Cada tarjeta abre su página, con versiones, arquitectura y documentación.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px"><a class="card reveal" href="/hospital-lorawan/" style="display:block;padding:24px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:21px;margin-bottom:8px">Hospital LoRaWAN</h3>
+  <p style="margin-bottom:16px">Temperatura y humedad de un hospital, simuladas y visualizadas en un dashboard Flask con SQLite.</p>
+  <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">Jinja</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/nodered-lab/" style="display:block;padding:24px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:21px;margin-bottom:8px">Node-RED Lab</h3>
+  <p style="margin-bottom:16px">Una colección de flujos Node-RED: desde el primer mensaje hasta dashboards, MQTT y GPIO.</p>
+  <div class="chips"><span class="chip">Node-RED</span><span class="chip">MQTT</span><span class="chip">Raspberry Pi</span><span class="chip">Docker</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/cashdro-params/" style="display:block;padding:24px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:21px;margin-bottom:8px">CashDro Params</h3>
+  <p style="margin-bottom:16px">Una consola Windows que consulta los parámetros técnicos y financieros de una CashDro.</p>
+  <div class="chips"><span class="chip">C#</span><span class="chip">.NET Framework</span><span class="chip">WinForms</span><span class="chip">Visual Studio</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/autoatencion/" style="display:block;padding:24px">
+  <span class="tag">3 versiónes</span>
+  <h3 style="font-size:21px;margin-bottom:8px">Autoatención</h3>
+  <p style="margin-bottom:16px">Tres versiones de un sistema de autoatención: venta, turnos y notificación.</p>
+  <div class="chips"><span class="chip">C# WinForms</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">SSE</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a></div>
+</div></section>
+<section class="cta"><div class="wrap"><div class="cta-box reveal"><div class="kicker">Volver</div><h2>Seguir explorando.</h2><p>El catálogo general reúne las tres disciplinas en una sola entrada.</p><a class="btn btn-primary" href="/">Volver al portfolio <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-grid">
+  <div><strong style="color:var(--text)">jmadasme.portfolio</strong> · 9 proyectos, 18 versiones, 3 secciones.<br>Documentación y sitios publicados con GitHub Pages.</div>
+  <div><a href="/arduino-unoq/">Arduino UNO Q</a> · <a href="/iot/">IoT & Hardware</a> · <a href="/software/">Software & IA</a> · <a href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></div>
+</div></footer>
+
+</body>
+</html>

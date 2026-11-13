@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Arduino UNO Q · jmadasme</title>
-<meta name="description" content="Una colección docente: cuatro etapas de Arduino/ESP32 y una librería de suelo lista para usar.">
+<meta name="description" content="Cinco familias que exploran la UNO Q desde ángulos distintos: rostro, cubo de gestos, asistente local, diagnóstico CAN y los primeros pasos de GPIO.">
 <meta property="og:title" content="Arduino UNO Q · jmadasme">
-<meta property="og:description" content="Una colección docente: cuatro etapas de Arduino/ESP32 y una librería de suelo lista para usar.">
+<meta property="og:description" content="Cinco familias que exploran la UNO Q desde ángulos distintos: rostro, cubo de gestos, asistente local, diagnóstico CAN y los primeros pasos de GPIO.">
 <meta property="og:image" content="assets/og.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -145,31 +145,61 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 <main id="top">
 <section class="hero"><div class="wrap" style="max-width:900px">
   <div class="eyebrow">01 · Placa y aprendizaje</div>
-  <h1>Arduino UNO Q.<br><span class="grad">2 proyectos.</span></h1>
-  <p class="lead">Una colección docente: cuatro etapas de Arduino/ESP32 y una librería de suelo lista para usar.</p>
-  <div class="badges"><span class="badge">2 proyectos</span><span class="badge">5 versiones</span><span class="badge">Documentación completa</span></div>
+  <h1>Arduino UNO Q.<br><span class="grad">7 familias.</span></h1>
+  <p class="lead">Cinco familias que exploran la UNO Q desde ángulos distintos: rostro, cubo de gestos, asistente local, diagnóstico CAN y los primeros pasos de GPIO.</p>
+  <div class="badges"><span class="badge">7 familias</span><span class="badge">11 versiones</span><span class="badge">Documentación completa</span></div>
 </div></section>
 <section class="section"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">Catálogo · Arduino UNO Q</div><h2>Elegí un proyecto.</h2><p class="section-sub">Cada tarjeta abre su página, con versiones, arquitectura y documentación.</p></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px"><a class="card reveal" href="/academia-arduino/" style="display:block;padding:24px">
-  <span class="tag">4 versiónes</span>
-  <h3 style="font-size:21px;margin-bottom:8px">Academia Arduino</h3>
-  <p style="margin-bottom:16px">Cuatro versiones de un mismo camino: del primer LED a un ESP32 con WiFi, TCP y web server.</p>
-  <div class="chips"><span class="chip">Arduino C++</span><span class="chip">ESP32</span><span class="chip">arduino-cli</span><span class="chip">RAR</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</a><a class="card reveal" href="/yl69-soil-moisture/" style="display:block;padding:24px">
+  <div class="section-head reveal"><div class="kicker">Catálogo · Arduino UNO Q</div><h2>Elegí una familia.</h2><p class="section-sub">Cada tarjeta abre su página, con versiones, arquitectura y documentación.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px"><a class="card reveal" href="/analizador-rostro/" style="display:block;padding:22px">
+  <span class="tag">2 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Analizador de Rostro</h3>
+  <p style="margin-bottom:14px">Detección y reconocimiento en dos etapas sobre la UNO Q, con Haar, YuNet, ONNX y un tracker que evita parpadeos.</p>
+  <div class="chips"><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">YuNet</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/unoq/" style="display:block;padding:22px">
   <span class="tag">1 versión</span>
-  <h3 style="font-size:21px;margin-bottom:8px">YL-69 Soil Moisture</h3>
-  <p style="margin-bottom:16px">Una librería para el YL-69/FC-28 que enciende el sensor solo cuando mide, lo calibra y lo apaga.</p>
-  <div class="chips"><span class="chip">Arduino C++</span><span class="chip">YL-69 / FC-28</span><span class="chip">ADC</span><span class="chip">Calibración</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <h3 style="font-size:20px;margin-bottom:8px">UNO Q Primeros Pasos</h3>
+  <p style="margin-bottom:14px">Blink y control GPIO en la UNO Q: MPU con Debian, MCU con Zephyr y carga por adb.</p>
+  <div class="chips"><span class="chip">Arduino UNO Q</span><span class="chip">Debian</span><span class="chip">Zephyr</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/jarvis-can/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Jarvis CAN</h3>
+  <p style="margin-bottom:14px">Diagnóstico automotriz offline: CAN/OBD-II a SQLite, consultas en C, alertas por voz y panel web.</p>
+  <div class="chips"><span class="chip">Arduino UNO Q</span><span class="chip">CAN</span><span class="chip">OBD-II</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/jarvis-unoq/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Jarvis UNO Q</h3>
+  <p style="margin-bottom:14px">Asistente conversacional local sobre UNO Q: STT, LLM y TTS sin GPU ni nube.</p>
+  <div class="chips"><span class="chip">Arduino UNO Q</span><span class="chip">Python</span><span class="chip">STT</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/gesturecube/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">GestureCube</h3>
+  <p style="margin-bottom:14px">Cubo Rubik 3D en CSS controlado por mano con MediaPipe, offline y servido desde la UNO Q.</p>
+  <div class="chips"><span class="chip">Arduino UNO Q</span><span class="chip">MediaPipe</span><span class="chip">JavaScript</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/academia-arduino/" style="display:block;padding:22px">
+  <span class="tag">4 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Academia Arduino</h3>
+  <p style="margin-bottom:14px">Cuatro cursos de Arduino y ESP32, con todas sus versiones preservadas.</p>
+  <div class="chips"><span class="chip">Arduino</span><span class="chip">ESP32</span><span class="chip">C++</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/yl69-soil-moisture/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">YL-69 Soil Moisture</h3>
+  <p style="margin-bottom:14px">Librería Arduino para humedad de suelo con power gating y calibración.</p>
+  <div class="chips"><span class="chip">Arduino</span><span class="chip">Sensor</span><span class="chip">C++</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
 </a></div>
 </div></section>
 <section class="cta"><div class="wrap"><div class="cta-box reveal"><div class="kicker">Volver</div><h2>Seguir explorando.</h2><p>El catálogo general reúne las tres disciplinas en una sola entrada.</p><a class="btn btn-primary" href="/">Volver al portfolio <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-grid">
-  <div><strong style="color:var(--text)">jmadasme.portfolio</strong> · 9 proyectos, 18 versiones, 3 secciones.<br>Documentación y sitios publicados con GitHub Pages.</div>
-  <div><a href="/arduino-unoq/">Arduino UNO Q</a> · <a href="/iot/">IoT & Hardware</a> · <a href="/software/">Software & IA</a> · <a href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></div>
+  <div><strong style="color:var(--text)">jmadasme.portfolio</strong> · 40 familias, 96 versiones, 3 secciones.<br>Documentación y sitios publicados con GitHub Pages.</div>
+  <div><a href="/arduino-unoq/">Arduino UNO Q</a> · <a href="/iot/">IoT &amp; Hardware</a> · <a href="/software/">Software &amp; IA</a> · <a href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></div>
 </div></footer>
 
 </body>

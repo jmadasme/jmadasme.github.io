@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>IoT &amp; Hardware · jmadasme</title>
-<meta name="description" content="Sistemas completos: LoRaWAN, Node-RED, CashDro y autoatención, con sus versiones reunidas.">
+<meta name="description" content="Dieciocho familias de hardware y sistemas embebidos: LoRaWAN, ESP-NOW, MQTT, autoatención, pagos, riego y recuperación de routers.">
 <meta property="og:title" content="IoT &amp; Hardware · jmadasme">
-<meta property="og:description" content="Sistemas completos: LoRaWAN, Node-RED, CashDro y autoatención, con sus versiones reunidas.">
+<meta property="og:description" content="Dieciocho familias de hardware y sistemas embebidos: LoRaWAN, ESP-NOW, MQTT, autoatención, pagos, riego y recuperación de routers.">
 <meta property="og:image" content="assets/og.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -145,43 +145,151 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 <main id="top">
 <section class="hero"><div class="wrap" style="max-width:900px">
   <div class="eyebrow">02 · Del sensor al sistema</div>
-  <h1>IoT &amp; Hardware.<br><span class="grad">4 proyectos.</span></h1>
-  <p class="lead">Sistemas completos: LoRaWAN, Node-RED, CashDro y autoatención, con sus versiones reunidas.</p>
-  <div class="badges"><span class="badge">4 proyectos</span><span class="badge">6 versiones</span><span class="badge">Documentación completa</span></div>
+  <h1>IoT &amp; Hardware.<br><span class="grad">22 familias.</span></h1>
+  <p class="lead">Dieciocho familias de hardware y sistemas embebidos: LoRaWAN, ESP-NOW, MQTT, autoatención, pagos, riego y recuperación de routers.</p>
+  <div class="badges"><span class="badge">22 familias</span><span class="badge">65 versiones</span><span class="badge">Documentación completa</span></div>
 </div></section>
 <section class="section"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">Catálogo · IoT &amp; Hardware</div><h2>Elegí un proyecto.</h2><p class="section-sub">Cada tarjeta abre su página, con versiones, arquitectura y documentación.</p></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px"><a class="card reveal" href="/hospital-lorawan/" style="display:block;padding:24px">
-  <span class="tag">1 versión</span>
-  <h3 style="font-size:21px;margin-bottom:8px">Hospital LoRaWAN</h3>
-  <p style="margin-bottom:16px">Temperatura y humedad de un hospital, simuladas y visualizadas en un dashboard Flask con SQLite.</p>
-  <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">Jinja</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</a><a class="card reveal" href="/nodered-lab/" style="display:block;padding:24px">
-  <span class="tag">1 versión</span>
-  <h3 style="font-size:21px;margin-bottom:8px">Node-RED Lab</h3>
-  <p style="margin-bottom:16px">Una colección de flujos Node-RED: desde el primer mensaje hasta dashboards, MQTT y GPIO.</p>
-  <div class="chips"><span class="chip">Node-RED</span><span class="chip">MQTT</span><span class="chip">Raspberry Pi</span><span class="chip">Docker</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</a><a class="card reveal" href="/cashdro-params/" style="display:block;padding:24px">
-  <span class="tag">1 versión</span>
-  <h3 style="font-size:21px;margin-bottom:8px">CashDro Params</h3>
-  <p style="margin-bottom:16px">Una consola Windows que consulta los parámetros técnicos y financieros de una CashDro.</p>
-  <div class="chips"><span class="chip">C#</span><span class="chip">.NET Framework</span><span class="chip">WinForms</span><span class="chip">Visual Studio</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</a><a class="card reveal" href="/autoatencion/" style="display:block;padding:24px">
+  <div class="section-head reveal"><div class="kicker">Catálogo · IoT &amp; Hardware</div><h2>Elegí una familia.</h2><p class="section-sub">Cada tarjeta abre su página, con versiones, arquitectura y documentación.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px"><a class="card reveal" href="/busaccel/" style="display:block;padding:22px">
+  <span class="tag">4 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">BusAccel</h3>
+  <p style="margin-bottom:14px">Cuatro iteraciones para detectar impactos en un bus: del registro crudo a una ventana comprimida y un umbral aprendido.</p>
+  <div class="chips"><span class="chip">ESP8266</span><span class="chip">Arduino C++</span><span class="chip">Acelerómetro</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/cubecell-lorawan/" style="display:block;padding:22px">
+  <span class="tag">9 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">CubeCell LoRaWAN</h3>
+  <p style="margin-bottom:14px">Del demo autónomo al puente bidireccional serial↔LoRaWAN: nueve etapas de nodos CubeCell y HTCC.</p>
+  <div class="chips"><span class="chip">CubeCell</span><span class="chip">HTCC-AB01</span><span class="chip">HTCC-AB02A</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/htcc-amg8833/" style="display:block;padding:22px">
+  <span class="tag">4 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">HTCC AMG8833</h3>
+  <p style="margin-bottom:14px">Cuatro nodos térmicos HTCC con AMG8833: de la primera prueba a la persistencia de sesión y el control por downlink.</p>
+  <div class="chips"><span class="chip">HTCC-AB01</span><span class="chip">HTCC-AB02A</span><span class="chip">AMG8833</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/netespnow/" style="display:block;padding:22px">
+  <span class="tag">5 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">netEspNow</h3>
+  <p style="margin-bottom:14px">De una estrella de seis NodeMCU a una malla fractal de tres niveles diseñada para 22 nodos.</p>
+  <div class="chips"><span class="chip">ESP8266</span><span class="chip">ESP-NOW</span><span class="chip">Arduino C++</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/teleasistencia/" style="display:block;padding:22px">
+  <span class="tag">6 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Teleasistencia</h3>
+  <p style="margin-bottom:14px">Seis versiones de un sistema de teleasistencia con Android, servidor WebRTC y emparejamiento por QR.</p>
+  <div class="chips"><span class="chip">Android</span><span class="chip">Kotlin/Java</span><span class="chip">WebRTC</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/vending-solana/" style="display:block;padding:22px">
+  <span class="tag">4 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Vending Solana</h3>
+  <p style="margin-bottom:14px">Máquina expendedora que cobra en USDC sobre Solana y acciona relés desde una Arduino UNO Q.</p>
+  <div class="chips"><span class="chip">Solana</span><span class="chip">USDC</span><span class="chip">Arduino UNO Q</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/totems-autoatencion/" style="display:block;padding:22px">
   <span class="tag">3 versiónes</span>
-  <h3 style="font-size:21px;margin-bottom:8px">Autoatención</h3>
-  <p style="margin-bottom:16px">Tres versiones de un sistema de autoatención: venta, turnos y notificación.</p>
-  <div class="chips"><span class="chip">C# WinForms</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">SSE</span></div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver proyecto</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <h3 style="font-size:20px;margin-bottom:8px">Tótems de Autoatención</h3>
+  <p style="margin-bottom:14px">Tres tótems: tickets en C/Win32, carrito web vertical y pago con terminal Getnet IM30.</p>
+  <div class="chips"><span class="chip">C</span><span class="chip">Win32</span><span class="chip">HTML/CSS/JS</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/espnow-demos/" style="display:block;padding:22px">
+  <span class="tag">3 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">ESP-NOW Demos</h3>
+  <p style="margin-bottom:14px">Demos de campo con ESP-NOW y LoRaWAN: bridge, nodos, GUI en Python y dos radios cooperando.</p>
+  <div class="chips"><span class="chip">ESP8266</span><span class="chip">ESP32</span><span class="chip">ESP-NOW</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/esp8266-sensores/" style="display:block;padding:22px">
+  <span class="tag">11 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">ESP8266 Sensores</h3>
+  <p style="margin-bottom:14px">Sensores, actuadores y utilidades ESP8266: del DHT22 al escáner TCP, todos con código mínimo y verificable.</p>
+  <div class="chips"><span class="chip">ESP8266</span><span class="chip">ESP32-CAM</span><span class="chip">Arduino C++</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/curso-esp32-riego/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Curso ESP32 Riego</h3>
+  <p style="margin-bottom:14px">Un controlador de riego ESP32-S3 con portal cautivo, cuatro horarios y decisión por pronóstico de lluvia.</p>
+  <div class="chips"><span class="chip">ESP32-S3</span><span class="chip">Arduino C++</span><span class="chip">WiFi</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/esp32cam-blink/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">ESP32-CAM Blink</h3>
+  <p style="margin-bottom:14px">Un blink mínimo sobre la placa AI-Thinker con OV2640, para verificar alimentación y GPIO antes de pelear con video.</p>
+  <div class="chips"><span class="chip">ESP32-CAM</span><span class="chip">AI-Thinker</span><span class="chip">OV2640</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/teltonika-lp104/" style="display:block;padding:22px">
+  <span class="tag">2 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Teltonika LP104</h3>
+  <p style="margin-bottom:14px">Dos versiones de un publicador MQTT en C para RUT200, con credenciales fuera del binario en la V2.</p>
+  <div class="chips"><span class="chip">C</span><span class="chip">MQTT</span><span class="chip">Teltonika RUT200</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/inhand-router/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">InHand Router</h3>
+  <p style="margin-bottom:14px">Bitácora de intervención en un InGateway IG601PS08: cambio de LAN, intento de SSH y reversión limpia.</p>
+  <div class="chips"><span class="chip">InHand IG601PS08</span><span class="chip">InGateway</span><span class="chip">LAN</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/mr3420-onion/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">MR3420 Onion</h3>
+  <p style="margin-bottom:14px">Recuperación por TFTP, OpenWrt y un hidden service v3 persistente en un TL-MR3420 v5.</p>
+  <div class="chips"><span class="chip">TP-Link TL-MR3420 v5</span><span class="chip">OpenWrt</span><span class="chip">Tor</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/ttgo-lorawan/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">TTGO LoRaWAN</h3>
+  <p style="margin-bottom:14px">Nodo TTGO T-Beam v1.1 con SX1262, GPS y telemetría hacia un gateway Milesight UG56.</p>
+  <div class="chips"><span class="chip">TTGO T-Beam v1.1</span><span class="chip">ESP32</span><span class="chip">SX1262</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/cashdro-controller/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">CashDro Controller</h3>
+  <p style="margin-bottom:14px">CLI en Python para operar un reciclador CashDro desde Windows, con API y configuración separadas.</p>
+  <div class="chips"><span class="chip">Python</span><span class="chip">CashDro</span><span class="chip">HTTP/API</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/nb2700-telemetria/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">NB2700 Telemetría</h3>
+  <p style="margin-bottom:14px">nbping y atcmd: ICMP crudo y diálogo AT para el NetModule NB2700, compilados para PowerPC.</p>
+  <div class="chips"><span class="chip">C</span><span class="chip">NetModule NB2700</span><span class="chip">PowerPC</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/valvulas-zigbee/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Válvulas Zigbee</h3>
+  <p style="margin-bottom:14px">Riego con válvulas Zigbee y backend propio: sin app, sin cuenta y sin nube obligatoria.</p>
+  <div class="chips"><span class="chip">Zigbee</span><span class="chip">Zigbee2MQTT</span><span class="chip">Docker</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/hospital-lorawan/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Hospital LoRaWAN</h3>
+  <p style="margin-bottom:14px">Dashboard Flask + SQLite para hasta 200 sensores LoRaWAN.</p>
+  <div class="chips"><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">LoRaWAN</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/nodered-lab/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Node-RED Lab</h3>
+  <p style="margin-bottom:14px">Flujos Node-RED para MQTT, dashboards y GPIO.</p>
+  <div class="chips"><span class="chip">Node-RED</span><span class="chip">MQTT</span><span class="chip">Raspberry Pi</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/cashdro-params/" style="display:block;padding:22px">
+  <span class="tag">1 versión</span>
+  <h3 style="font-size:20px;margin-bottom:8px">CashDro Params</h3>
+  <p style="margin-bottom:14px">Utilidad C# para leer parámetros de máquinas CashDro.</p>
+  <div class="chips"><span class="chip">C#</span><span class="chip">WinForms</span><span class="chip">SQL</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</a><a class="card reveal" href="/autoatencion/" style="display:block;padding:22px">
+  <span class="tag">3 versiónes</span>
+  <h3 style="font-size:20px;margin-bottom:8px">Autoatención</h3>
+  <p style="margin-bottom:14px">Tótem C#, turnero Flask y notificador Python en tres versiones.</p>
+  <div class="chips"><span class="chip">C#</span><span class="chip">Flask</span><span class="chip">Python</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--accent)"><span>Ver familia</span><span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
 </a></div>
 </div></section>
 <section class="cta"><div class="wrap"><div class="cta-box reveal"><div class="kicker">Volver</div><h2>Seguir explorando.</h2><p>El catálogo general reúne las tres disciplinas en una sola entrada.</p><a class="btn btn-primary" href="/">Volver al portfolio <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-grid">
-  <div><strong style="color:var(--text)">jmadasme.portfolio</strong> · 9 proyectos, 18 versiones, 3 secciones.<br>Documentación y sitios publicados con GitHub Pages.</div>
-  <div><a href="/arduino-unoq/">Arduino UNO Q</a> · <a href="/iot/">IoT & Hardware</a> · <a href="/software/">Software & IA</a> · <a href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></div>
+  <div><strong style="color:var(--text)">jmadasme.portfolio</strong> · 40 familias, 96 versiones, 3 secciones.<br>Documentación y sitios publicados con GitHub Pages.</div>
+  <div><a href="/arduino-unoq/">Arduino UNO Q</a> · <a href="/iot/">IoT &amp; Hardware</a> · <a href="/software/">Software &amp; IA</a> · <a href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></div>
 </div></footer>
 
 </body>

@@ -136,11 +136,13 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 }
 </style>
 
+<link href="rec/player.css?v=1" rel="stylesheet"/>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
   <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span><span>jmadasme<span style="color:var(--accent)">.</span>portfolio</span></a>
-  <nav class="nav-links"><a href="/arduino-unoq/">Arduino</a><a href="/iot/">IoT</a><a href="/software/">Software</a><a class="btn btn-ghost" style="padding:9px 15px" href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></nav>
+  <nav class="nav-links"><a href="/arduino-unoq/">Arduino</a><a href="/iot/">IoT</a><a href="/software/">Software</a><a class="btn btn-ghost" style="padding:9px 15px" href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a><a href="#video">Video</a>
+</nav>
 </div></header>
 <main id="top">
 <section class="hero"><div class="wrap" style="max-width:920px">
@@ -182,6 +184,45 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 </a></div>
 </div></section>
 
+
+<section class="section tight rec-section" id="video" style="--accent:#2E7DFF;--accent2:#14F195">
+<div class="wrap">
+<div class="rec-kicker">REC · VIDEO · 2:32</div>
+<h2 class="rec-h2">Catálogo jmadasme · tres puertas, un archivo</h2>
+<p class="rec-lead">El catálogo raíz que reúne el archivo de hardware, IoT y software de jmadasme. Una portada, tres portales y páginas estáticas publicadas con GitHub Pages, sin build ni generador.</p>
+<div class="rec-banner">
+<span class="rec-banner-icon">📋</span>
+<strong>Puedes copiar y pegar los comandos del video desde el video !!!</strong>
+<span>Pausá, seleccioná el texto de la terminal y copiá.</span>
+</div>
+<div class="rec-shell">
+<div class="rec-bar"><i></i><i></i><i></i><span class="rec-title">Catálogo jmadasme · tres puertas, un archivo · asciinema</span><span class="rec-rec"><b></b>REC</span></div>
+<div class="rec-screen-wrap">
+<div class="rec-screen" id="rec-screen"></div>
+<div class="rec-poster" id="rec-poster">
+<div class="rec-kicker">ASCIINEMA · 2:32</div>
+<h3>Catálogo jmadasme · tres puertas, un archivo</h3>
+<p>El catálogo raíz que reúne el archivo de hardware, IoT y software de jmadasme. Una portada, tres portales y páginas estáticas publicadas con GitHub Pages, sin build ni generador.</p>
+<div class="rec-poster-meta">jmadasme.github.io · código real</div>
+<button class="rec-btn rec-primary" id="rec-start" type="button">▶ Reproducir</button>
+</div>
+</div>
+<div class="rec-controls">
+<button class="rec-btn rec-primary" id="rec-play" type="button">▶ Reproducir</button>
+<button class="rec-btn" id="rec-restart" type="button">↺ Reiniciar</button>
+<input class="rec-progress" id="rec-range" type="range" min="0" max="1000" value="0" aria-label="Progreso"/>
+<span class="rec-time" id="rec-time">0:00 / 2:32</span>
+<select class="rec-speed" id="rec-speed" aria-label="Velocidad"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+<button class="rec-btn" id="rec-full" type="button" title="Pantalla completa">⛶</button>
+<button class="rec-btn" id="rec-copy" type="button">⧉ Copiar comandos</button>
+<a class="rec-download" href="rec/jmadasme.github.io.cast" download>descargar .cast</a>
+</div>
+</div>
+<p class="rec-note">Sitio estático sin generador: se edita el HTML y GitHub Pages publica la carpeta tal como está.</p>
+<div class="rec-chapters"><span class="rec-chip"><b>0:06</b> EL PROBLEMA</span><span class="rec-chip"><b>0:19</b> LA PORTADA</span><span class="rec-chip"><b>0:31</b> TRES PUERTAS</span><span class="rec-chip"><b>0:44</b> IDENTIDAD</span><span class="rec-chip"><b>0:57</b> LA REJILLA</span><span class="rec-chip"><b>1:09</b> EL MÉTODO</span><span class="rec-chip"><b>1:22</b> PORTAL IOT</span><span class="rec-chip"><b>1:35</b> PORTAL SOFTWARE</span><span class="rec-chip"><b>1:47</b> PORTAL ARDUINO</span><span class="rec-chip"><b>1:59</b> CÓMO SE PUBLICA</span><span class="rec-chip"><b>2:13</b> CÓMO EJECUTARLO</span></div>
+</div>
+</section>
+
 <section class="section tight"><div class="wrap">
   <div class="section-head reveal"><div class="kicker">Método</div><h2>Documentar también es diseñar.</h2></div>
   <div class="features">
@@ -198,5 +239,7 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   <div><a href="/arduino-unoq/">Arduino UNO Q</a> · <a href="/iot/">IoT &amp; Hardware</a> · <a href="/software/">Software &amp; IA</a> · <a href="https://github.com/jmadasme" target="_blank" rel="noopener">GitHub</a></div>
 </div></footer>
 
+<script defer src="rec/jmadasme.github.io.cast.js?v=1"></script>
+<script defer src="rec/player.js?v=1"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
   "use strict";
 
   var WORKER = "https://telemetria.jmadasme.workers.dev";
+  var SITE = "jmadasme.github.io"; // identificador de este sitio en el backend (un contador por repo)
   var WEEKS = 26; // columnas (semanas) de la rejilla
 
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
@@ -15,13 +16,13 @@
   function buildWidget() {
     var style = document.createElement("style");
     style.textContent = [
-      ".tel{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;align-items:center;gap:24px;flex-wrap:wrap}",
-      ".tel-head{display:flex;flex-direction:column;gap:6px;min-width:150px}",
+      ".tel{margin-top:22px;padding:18px 20px 0;border-top:1px solid var(--line)}",
+      ".tel-head{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}",
       ".tel-label{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}",
       ".tel-label .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(42,157,143,.14)}",
       ".tel-num{font-family:var(--mono);font-size:26px;font-weight:500;letter-spacing:-.03em;color:var(--text);line-height:1}",
-      ".tel-grid{display:flex;gap:2px;align-items:center;overflow:hidden}",
-      ".tel-col{display:flex;flex-direction:column;gap:2px}",
+      ".tel-grid{display:flex;justify-content:space-between;gap:2px;width:100%;margin-top:16px;overflow:hidden}",
+      ".tel-col{display:flex;flex-direction:column;gap:2px;flex:0 0 auto}",
       ".tel-cell{width:10px;height:10px;border-radius:2px;background:rgba(148,190,200,.07)}",
       "@media(max-width:620px){.tel-cell{width:7px;height:7px}}"
     ].join("\n");
@@ -36,7 +37,7 @@
       "</div>" +
       '<div class="tel-grid" id="tel-grid"></div>';
 
-    var foot = document.querySelector(".footer .wrap") || document.querySelector("footer") || document.body;
+    var foot = document.querySelector(".footer") || document.querySelector("footer") || document.body;
     foot.appendChild(box);
   }
 
@@ -96,7 +97,7 @@
   function init() {
     buildWidget();
     drawGrid({}); // rejilla neutra mientras carga
-    fetch(WORKER + "/hit", { method: "POST" })
+    fetch(WORKER + "/hit?site=" + encodeURIComponent(SITE), { method: "POST" })
       .then(function (r) { return r.json(); })
       .then(function (data) {
         setNumber(data.total);

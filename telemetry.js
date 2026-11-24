@@ -16,7 +16,7 @@
   function buildWidget() {
     var style = document.createElement("style");
     style.textContent = [
-      ".tel{margin-top:22px;padding:18px 20px 0;border-top:1px solid var(--line)}",
+      ".tel{width:100%;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}",
       ".tel-head{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}",
       ".tel-label{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}",
       ".tel-label .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(42,157,143,.14)}",
@@ -37,7 +37,7 @@
       "</div>" +
       '<div class="tel-grid" id="tel-grid"></div>';
 
-    var foot = document.querySelector(".footer") || document.querySelector("footer") || document.body;
+    var foot = document.querySelector(".footer .wrap") || document.querySelector(".footer") || document.querySelector("footer") || document.body;
     foot.appendChild(box);
   }
 
